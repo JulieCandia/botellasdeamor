@@ -22,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # Application definition
+AUTH_USER_MODEL = 'usuarios.Usuario'
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.usuarios',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+    <section id="about" class="about">
+
+        <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+            <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+                <h3>¿Quienes somos?</h3>
+                <h2>Botella de amor - Resistencia</h2>
+                <p>
+                    “Botella de Amor” es un proyecto sin fines de lucro dedicado al desarrollo sostenible y mejoramiento de las condiciones de vida de las comunidades, con el objetivo principal de reducir los residuos plásticos en el ambiente, ya que son altamente contaminantes.
+                    Asimismo, se propone generar conciencia en la ciudadanía sobre la necesidad de reducir su uso y de consumir responsablemente.
+                </p>
+                <div class="text-center text-lg-start">
+                <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                    <span>Mas sobre nosotros</span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'img/about.jpg' %}" class="img-fluid" alt="">
+            </div>
+
+        </div>
+        </div>
+
+    </section>
+
+{% endblock contenido %}

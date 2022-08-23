@@ -23,5 +23,13 @@ urlpatterns = [
 
     path('', views.Home, name = 'home'),
 
-    path('Noticias/', include('apps.noticias.urls'))
+    path('Noticias/', include('apps.noticias.urls')),
+
+    path('Nosotros/',include('apps.sobre_nosotros.urls')),
+
+    path('Equipo/', include('apps.equipo.urls') ),
+
+    path('Galeria/',include('apps.galeria.urls')),
+
+    path('Contacto/',include('apps.contacto.urls'))
 ]

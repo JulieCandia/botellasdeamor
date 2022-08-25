@@ -58,6 +58,15 @@
           <li><a href="{% url 'eventos:eventos' %}">Eventos</a></li>
           <li><a href="{% url 'noticias:noticias' %}">Blog</a></li>
           <li><a class="nav-link scrollto" href="{% url 'contacto:contacto' %}">Contacto</a></li>
+
+          {% if user.is_authenticated %}
+            <li><a class="nav-link scrollto" href="{% url 'logout' %}">Cerrar sesión</a></li>
+          {% else %}
+            <li><a class="nav-link scrollto" href="{% url 'login' %}">Iniciar sesión</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'usuarios:registro' %}">Registrarse</a></li>
+          {% endif %}
+
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

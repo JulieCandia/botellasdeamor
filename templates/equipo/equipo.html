@@ -11,58 +11,22 @@
         </header>
 
         <div class="row gy-4">
-
+        {% for e in equipo %}
             <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
                 <div class="member-img">
-                <img src="{% static 'img/team/team-1.jpg' %}" class="img-fluid" alt="Foto de la integrante Maite Gil de Muro">
+                <img src="{{e.imagen.url}}" class="img-fluid" alt="Foto de la integrante {{e.nombre}}">
                 </div>
                 <div class="member-info">
-                <h4>Maite Gil de Muro</h4>
+                <h4>{{e.nombre}}</h4>
                 <span>Integrante de Botella de Amor</span>
-                <p></p>
+                <p>{{e.informacion}}</p>
                 </div>
             </div>
             </div>
+        {% endfor %}
 
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-                <div class="member-img">
-                <img src="{% static 'img/team/team-2.jpg' %}" class="img-fluid" alt="Foto de la integrante Celeste Lestani">
-                </div>
-                <div class="member-info">
-                <h4>Celeste Lestani</h4>
-                <span>Integrante de Botella de Amor</span>
-                <p></p>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-                <div class="member-img">
-                <img src="{% static 'img/team/team-3.jpg' %}" class="img-fluid" alt="Foto de la integrante Cecilia Gil de Muro">
-                </div>
-                <div class="member-info">
-                <h4>Cecilia Gil de Muro</h4>
-                <span>Integrante de Botella de Amor</span>
-                <p></p>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="member">
-                <div class="member-img">
-                <img src="{% static 'img/team/team-4.jpg' %}" class="img-fluid" alt="Foto de la integrante Rocio Blotta">
-                </div>
-                <div class="member-info">
-                <h4>Rocio Blotta</h4>
-                <span>Integrante de Botella de Amor</span>
-                <p></p>
-                </div>
-            </div>
-            </div>
+            
 
         </div>
 

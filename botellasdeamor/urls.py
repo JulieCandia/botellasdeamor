@@ -33,5 +33,8 @@ urlpatterns = [
 
     path('Galeria/',include('apps.galeria.urls')),
 
-    path('Contacto/',include('apps.contacto.urls'))
+    path('Contacto/',include('apps.contacto.urls')),
+
+    path('Evento/',include('apps.eventos.urls'))
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

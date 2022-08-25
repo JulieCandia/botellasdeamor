@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'apps.galeria',
     'apps.sobre_nosotros',
     'apps.equipo',
+    'apps.eventos',
     'apps.contacto',
 ]
 

@@ -32,7 +32,7 @@ urlpatterns = [
     path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
     path('logout/',auth.LogoutView.as_view(),name="logout"),
 
-    path('Noticias/', include('apps.noticias.urls')),
+    path('Noticias/', include('apps.noticias.urls'),name='noticias'),
 
     path('Nosotros/',include('apps.sobre_nosotros.urls')),
 

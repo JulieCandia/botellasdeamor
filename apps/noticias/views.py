@@ -6,7 +6,7 @@ from .models import  Post , Categoria , Web
 
 
 def obtenerWeb():
-    return Web.objects.filter(estado = True).latest('fecha_creacion')
+        return Web.objects.filter(estado = True).latest('fecha_creacion')
 
 class Noticias(ListView):
 

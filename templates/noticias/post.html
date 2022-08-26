@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+    <section class="breadcrumbs">
+        <div class="container">
+
+        <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'noticias:noticias' %}">Blog</a></li>
+            <li>Blog Simple</li>
+        </ol>
+        <h2>Blog Simple</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Single Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+            <div class="col-lg-8 entries">
+
+            <article class="entry entry-single">
+
+                <div class="entry-img">
+                    <center><a href="{{post.imagen_referencial.url}}"> <img src="{{post.imagen_referencial.url}} "  alt="" class="img-fluid"></center></a>
+                    </div>
+
+                    <h2 class="entry-title">
+                    <a href="{% url 'noticias:detalle_post' post.slug %}">{{post.titulo}}</a>
+                    </h2>
+
+                    <div class="entry-meta">
+                    <ul>
+                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{post.autor}}</a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a>{{post.fecha_publicacion}}</a></li>
+                    </ul>
+                    </div>
+
+                    <div class="entry-content">
+                    <p>{{post.contenido}}</p>
+
+                </div>
+
+                <div class="entry-footer">
+
+                    <i class="bi bi-tags"></i>
+                    <ul class="tags">
+                        <li><a href="">{{post.categoria}}</a></li>
+                    </ul>
+                </div>
+
+            </article><!-- End blog entry -->
+
+            <div class="blog-author d-flex align-items-center">
+                <img src="{{post.autor.imagen_referencial.url}}" class="rounded-circle float-left" alt="">
+                <div>
+                <h4>{{post.autor}}</h4>
+                <div class="social-links">
+                    <a href="{{post.autor.twitter}}"target="_blank" ><i class="bi bi-twitter"></i></a>
+                    <a href="{{post.autor.facebook}}" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="{{post.autor.instagram}}" target="_blank"><i class="biu bi-instagram"></i></a>
+                </div>
+                <p>
+                    Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
+                </p>
+                </div>
+            </div><!-- End blog author bio -->
+
+            <div class="blog-comments">
+
+                <h4 class="comments-count">8 Comments</h4>
+
+                <div id="comment-1" class="comment">
+                <div class="d-flex">
+                    <div class="comment-img"><img src="assets/img/blog/comments-1.jpg" alt=""></div>
+                    <div>
+                    <h5><a href="">Georgia Reader</a> <a href="#" class="reply"><i class="bi bi-reply-fill"></i> Reply</a></h5>
+                    <time datetime="2020-01-01">01 Jan, 2020</time>
+                    <p>
+                        Et rerum totam nisi. Molestiae vel quam dolorum vel voluptatem et et. Est ad aut sapiente quis molestiae est qui cum soluta.
+                        Vero aut rerum vel. Rerum quos laboriosam placeat ex qui. Sint qui facilis et.
+                    </p>
+                    </div>
+                </div>
+                </div><!-- End comment #1 -->
+
+                <div class="reply-form">
+                <h4>Leave a Reply</h4>
+                <p>Your email address will not be published. Required fields are marked * </p>
+                <form action="">
+                    <div class="row">
+                    <div class="col-md-6 form-group">
+                        <input name="name" type="text" class="form-control" placeholder="Your Name*">
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <input name="email" type="text" class="form-control" placeholder="Your Email*">
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col form-group">
+                        <input name="website" type="text" class="form-control" placeholder="Your Website">
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col form-group">
+                        <textarea name="comment" class="form-control" placeholder="Your Comment*"></textarea>
+                    </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+
+                </form>
+
+                </div>
+
+            </div><!-- End blog comments -->
+
+            </div><!-- End blog entries list -->
+
+            <div class="col-lg-4">
+
+                <div class="sidebar">
+      
+                  <h3 class="sidebar-title">Categories</h3>
+                  <div class="sidebar-item categories">
+                    <ul>
+                      <li><a href="{% url 'noticias:general' %}">General <span>(25)</span></a></li>
+                      <li><a href="{% url 'noticias:educacion' %}">Educacion <span>(12)</span></a></li>
+                      <li><a href="{% url 'noticias:informativo' %}">Informativo <span>(5)</span></a></li>
+                    </ul>
+                  </div><!-- End sidebar categories-->
+      
+                  <h3 class="sidebar-title">Recent Posts</h3>
+                  {% for post in post_recientes %}
+                    <div class="sidebar-item recent-posts">
+                      <div class="post-item clearfix">
+                        <img src="{{post.imagen_referencial.url}}" alt="">
+                        <h4><a href="{% url 'noticias:detalle_post' post.slug %}">{{post.titulo}}</a></h4>
+                        <time datetime="">{{post.fecha_publicacion}}</time>
+                      </div>
+                  {% endfor %}
+                  </div><!-- End sidebar recent posts-->
+      
+                </div><!-- End sidebar -->
+      
+             
+            </div><!-- End blog sidebar -->
+
+        </div>
+
+        </div>
+    </section>
+{% endblock contenido %}

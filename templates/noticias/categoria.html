@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+
+    <section class="breadcrumbs">
+        <div class="container">
+
+        <ol>
+            <li><a href="{% url 'noticias:noticias' %}">Home</a></li>
+            <li>Blog</li>
+        </ol>
+        <h2>Blog</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <!-- ======= Blog Section ======= -->
+
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+
+        <div class="row">
+
+            <div class="col-lg-8 entries">
+            {% for post in posts %}
+                <article class="entry">
+
+                    <div class="entry-img">
+                      <p style="text-align:center;"><a href="{% url 'noticias:detalle_post' post.slug %}"> <img src="{{post.imagen_referencial.url}} "   alt="" class="img-fluid"></p></a>
+                    </div>
+
+                    <h2 class="entry-title">
+                    <a href="{% url 'noticias:detalle_post' post.slug %}">{{ post.titulo }}</a>
+                    </h2>
+
+                    <div class="entry-meta">
+                    <ul>
+                        <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{ post.categoria }}</li>
+                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> {{post.fecha_publicacion}}</li>
+                    </ul>
+                    </div>
+
+                    <div class="entry-content">
+                    <p>{{post.descripcion}}</p>
+                    <div class="read-more">
+                        <a href="{% url 'noticias:detalle_post' post.slug %}">Ver Mas</a>
+                    </div>
+                    </div>
+
+                </article><!-- End blog entry -->
+                <!-- End blog entry -->
+            {% endfor %}
+
+            <div class="row text-center pt-5 border-top">
+                <div class="col-md-12">
+                  <div class="custom-pagination">
+                    Página {{ posts.number }} de {{ posts.paginator.num_pages }}
+                    {% if posts.has_previous %}
+                    <li>
+                      <a href="?page={{ posts.previous_page_number }}">{{ posts.previous_page_number }}</a>
+                    </li>
+                    {% endif %}
+                    {% if posts.has_next %}
+                    <li>
+                      <a href="?page={{ posts.next_page_number }}">{{ posts.next_page_number }}</a>
+                    </li>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- End blog entries list -->
+
+            <div class="col-lg-4">
+
+                <div class="sidebar">
+      
+                  <h3 class="sidebar-title">Categories</h3>
+                  <div class="sidebar-item categories">
+                    <ul>
+                      <li><a href="{% url 'noticias:general' %}">General <span>(25)</span></a></li>
+                      <li><a href="{% url 'noticias:educacion' %}">Educacion <span>(12)</span></a></li>
+                      <li><a href="{% url 'noticias:informativo' %}">Informativo <span>(5)</span></a></li>
+                    </ul>
+                  </div><!-- End sidebar categories-->
+      
+                  <h3 class="sidebar-title">Recent Posts</h3>
+                  {% for post in post_recientes %}
+                    <div class="sidebar-item recent-posts">
+                      <div class="post-item clearfix">
+                        <img src="{{post.imagen_referencial.url}}"  alt="">
+                        <h4><a href="{% url 'noticias:detalle_post' post.slug %}">{{post.titulo}}</a></h4>
+                        <time datetime="">{{post.fecha_publicacion}}</time>
+                      </div>
+                  {% endfor %}
+                  </div><!-- End sidebar recent posts-->
+      
+                </div><!-- End sidebar -->
+      
+             
+            </div><!-- End blog sidebar -->
+
+        </div>
+
+        </div>
+    </section>
+{% endblock contenido %}

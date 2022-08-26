@@ -16,14 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf.urls.static import static
+from django.conf import settings
 from . import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', views.Home, name = 'home'),
 
-    path('Noticias/', include('apps.noticias.urls')),
+    path('Noticias/', include('apps.noticias.urls'), name = 'noticias'),
 
     path('Nosotros/',include('apps.sobre_nosotros.urls')),
 
@@ -32,4 +35,4 @@ urlpatterns = [
     path('Galeria/',include('apps.galeria.urls')),
 
     path('Contacto/',include('apps.contacto.urls'))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

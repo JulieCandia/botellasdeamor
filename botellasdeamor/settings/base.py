@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'apps.sobre_nosotros',
     'apps.equipo',
     'apps.contacto',
+
 ]
 
 MIDDLEWARE = [

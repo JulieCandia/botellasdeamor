@@ -25,6 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 AUTH_USER_MODEL = 'usuarios.Usuario'
 
 
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+LOGOUT_REDIRECT_URL = reverse_lazy('home')
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +41,7 @@ INSTALLED_APPS = [
     'apps.galeria',
     'apps.sobre_nosotros',
     'apps.equipo',
+    'apps.eventos',
     'apps.contacto',
 
 ]
@@ -113,3 +118,6 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

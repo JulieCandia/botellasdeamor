@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>FlexStart Bootstrap Template - Index</title>
+  <title>Botella de amor</title>
   <meta content="" name="description">
 
   <meta content="" name="keywords">
@@ -46,7 +46,7 @@
 
       <a href="{% url 'home' %}" class="logo d-flex align-items-center">
         <img src="{% static 'img/iconbotella.png' %}" alt="" height="40px" width="40px">
-        <span>Inicio</span>
+        <span>Botella de Amor</span>
       </a>
 
       <nav id="navbar" class="navbar">
@@ -55,8 +55,18 @@
           <li><a class="nav-link scrollto" href="{% url 'sobre_nosotros:sobre_nosotros' %}">Nosotros</a></li>
           <li><a class="nav-link scrollto" href="{% url 'galeria:galeria' %}">Galeria</a></li>
           <li><a class="nav-link scrollto" href="{% url 'equipo:equipo' %}">Equipo</a></li>
-          <li><a href="{% url 'noticias:noticias' %}">Blog</a></li>
+          <li><a href="{% url 'eventos:eventos' %}">Eventos</a></li>
+          <li><a href="{% url 'noticias:noticias' %}">Blog de Noticias</a></li>
           <li><a class="nav-link scrollto" href="{% url 'contacto:contacto' %}">Contacto</a></li>
+
+          {% if user.is_authenticated %}
+            <li><a class="nav-link scrollto" href="{% url 'logout' %}">Cerrar sesión</a></li>
+          {% else %}
+            <li><a class="nav-link scrollto" href="{% url 'login' %}">Iniciar sesión</a></li>
+            <li><a class="nav-link scrollto" href="{% url 'usuarios:registro' %}">Registrarse</a></li>
+          {% endif %}
+
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -75,35 +85,37 @@
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
             <a href="{% url 'home' %}" class="logo d-flex align-items-center">
-              <img src="{% static 'img/botelladeamor.png' %}" alt="" width="40px" height="40px">
+              <img src="{% static 'img/iconbotella.png' %}" alt="" width="40px" height="40px">
               <span>Botella de amor</span>
             </a>
             <p>Botella de amor es una organizacion sin fines de lucro con el objetivo de reducir el consumo de plastico de un solo uso.</p>
             <div id="contact" class="social-links mt-3">
-              <a href="{{web.facebook}}" target="_blank" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="{{web.instagram}}" target="_blank" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.facebook.com/botelladeamorresistencia/" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/botelladeamorresistencia/" class="instagram" target="_blank" ><i class="bi bi-instagram"></i></a>
             </div>
           </div>
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start "  style="z-index:-1000">
             <h4></h4>
             <p></p>
 
+            
+          </div>         
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
             <h4>Enlaces útiles</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Inicio</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Nosotros</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Galeria</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Equipo</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Blog</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{% url 'sobre_nosotros:sobre_nosotros' %}">Nosotros</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{% url 'galeria:galeria' %}">Galeria</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{% url 'equipo:equipo' %}">Equipo</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{% url 'eventos:eventos' %}">Eventos</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="{% url 'noticias:noticias' %}">Blog de Noticias</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="https://www.google.com/maps/d/u/0/viewer?mid=1QBrPiv4TC7PHydND-XuRq2vPXHZBIkAE&ll=-27.44836777480339%2C-58.981751900000006&z=14">Mapa Puntos de Acopio</a></li>
             </ul>
           </div>
 
           
-
-
         </div>
       </div>
     </div>

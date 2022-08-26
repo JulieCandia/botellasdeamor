@@ -6,17 +6,18 @@
         <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-            <h2>Galeria de imagenes</h2>
-            <p>Botellas de amor - detalles</p>
+            <!-- <h2>Galeria de imagenes</h2> -->
+            <p>Botellas de amor - Galeria</p>
+            <h2>Aqui podras ver un poco de nuestra galeria de imagenes, puntos de acopio, tips, y formas de desplatificar el medio ambiente </h2>
         </header>
-
         <div class="row" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-                <li data-filter=".filter-desplastificar" class="filter-active">Desplastificar</li>
-                <li data-filter=".filter-acopio">Puntos de Acopio</li>
-                <li data-filter=".filter-tips">Tips</li>
-                <li data-filter=".filter-otros">Otras imagenes</li>
+                <li data-filter=".filter-all" class="filter-active">Todas</li>
+                <li data-filter=".filter-Desplastificar">Desplastificar</li>
+                <li data-filter=".filter-Puntos_de_acopio">Puntos de Acopio</li>
+                <li data-filter=".filter-Tips">Tips</li>
+                <li data-filter=".filter-Otros">Otras imagenes</li>
             </ul>
             </div>
         </div>
@@ -24,163 +25,59 @@
         <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
             <!-- DESPLASTIFICAR (IMAGENES)-->
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
+        {% for img in imagenes %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-{{img.categoria}} filter-all">
             <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-1.png" class="img-fluid" alt="">
+                <img src="{{img.imagen.url}}" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
+                <h4>{{img.titulo}}</h4>
                 <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-1.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
+                    <a href="{{img.imagen.url}}" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
                 </div>
                 </div>
             </div>
             </div>
+        {% endfor %}
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
+            <!-- PUNTOS DE ACOPIO (IMAGENES)
+
+            <div class="col-lg-4 col-md-6 portfolio-item filter-acopio filter-all">
             <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-2.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
-                <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-2.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
-            <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-3.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
-                <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-3.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
-            <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-4.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
-                <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-4.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
-            <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-5.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
-                <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-5.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
-            <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-6.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
-                <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-6.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
-            <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-7.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
-                <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-7.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
-            <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-8.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
-                <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-8.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-desplastificar">
-            <div class="portfolio-wrap">
-                <img src="static/img/gallery/desplastificar/desplastificar-9.png" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                <h4>Formas de desplastificar</h4>
-                <p></p>
-                <div class="portfolio-links">
-                    <a href="static/img/gallery/desplastificar/desplastificar-9.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <!-- PUNTOS DE ACOPIO (IMAGENES) -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-acopio">
-            <div class="portfolio-wrap">
-                <img src="static/img/gallery/puntosAcopio/puntos-1.png" class="img-fluid" alt="">
+                <img src="{% static 'img/gallery/puntosAcopio/puntos-1.png' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                 <h4>Punto de Acopio</h4>
                 <p></p>
                 <div class="portfolio-links">
-                    <a href="static/img/gallery/puntosAcopio/puntos-1.png" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
+                    <a href="{% static 'img/gallery/puntosAcopio/puntos-1.png' %}" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
                 </div>
                 </div>
             </div>
             </div>
-            <!-- TIPS (IMAGENES) -->
-            <div class="col-lg-4 col-md-6 portfolio-item filter-tips">
+             TIPS (IMAGENES) 
+            <div class="col-lg-4 col-md-6 portfolio-item filter-tips filter-all">
             <div class="portfolio-wrap">
-                <img src="static/img/gallery/tips/tips-1.jpg" class="img-fluid" alt="">
+                <img src="{% static 'img/gallery/tips/tips-1.jpg' %}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                 <h4>Tips</h4>
                 <p></p>
                 <div class="portfolio-links">
-                    <a href="static/img/gallery/tips/tips-1.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
+                    <a href="{% static 'img/gallery/tips/tips-1.jpg' %}" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
                 </div>
                 </div>
             </div>
             </div>
-            <!-- OTROS (IMAGENES) -->
-            <div class="col-lg-4 col-md-6 portfolio-item filter-otros">
+             OTROS (IMAGENES) 
+            <div class="col-lg-4 col-md-6 portfolio-item filter-otros filter-all">
             <div class="portfolio-wrap">
-                <img src="static/img/gallery/otros/otros-1.jpg" class="img-fluid" alt="">
+                <img src="{% static 'img/gallery/otros/otros-1.jpg'%}" class="img-fluid" alt="">
                 <div class="portfolio-info">
                 <h4>Otros</h4>
                 <div class="portfolio-links">
-                    <a href="static/img/gallery/otros/otros-1.jpg" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
+                    <a href="{% static 'img/gallery/otros/otros-1.jpg'%}" data-gallery="portfolioGallery" class="portfokio-lightbox"><i class="bi bi-plus"></i></a>
                 </div>
                 </div>
             </div>
-            </div>
+            </div> -->
         </div>
         </div>
 

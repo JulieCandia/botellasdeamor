@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<section id="recent-blog-posts" class="recent-blog-posts">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <p>Proximos eventos</p>
+        <h2>Te esperamos en el siguiente!</h2>
+      </header>
+
+      <div class="row">
+        {% for e in eventos %}
+        <div class="col-lg-4 mr-4 mb-4">
+          <div class="post-box">
+            <span class="post-date">Fecha del evento: {{e.fecha}}</span>
+            <h3 class="post-title">{{e.titulo}}</h3>
+            <span class="post-date">Modalidad: {{e.tipo}}</span>
+            <p>{{e.descripcion}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </section>
+{% endblock contenido %}

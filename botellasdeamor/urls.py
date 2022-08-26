@@ -40,8 +40,6 @@ urlpatterns = [
 
     path('Galeria/',include('apps.galeria.urls')),
 
-    path('Contacto/',include('apps.contacto.urls')),
-
     path('Evento/',include('apps.eventos.urls')),
 
     path('Usuario/',include('apps.usuarios.urls')),

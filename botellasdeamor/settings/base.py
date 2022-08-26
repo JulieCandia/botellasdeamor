@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'apps.sobre_nosotros',
     'apps.equipo',
     'apps.eventos',
-    'apps.contacto',
 
 ]
 

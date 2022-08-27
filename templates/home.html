@@ -9,8 +9,12 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">Llenando Botellas de Amor</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400"><i class="fa-solid fa-heart">Llenando Botellas </i></h2>
-          <div data-aos="fade-up" data-aos-delay="600">
+          {% if user.is_authenticated %}
+            <h2 data-aos="fade-up" data-aos-delay="400"><i class="fa-solid fa-heart"> Bienvenido {{user.username}}.</i></h2>
+          {% else %}
+          <h2 data-aos="fade-up" data-aos-delay="400"><i class="fa-solid fa-heart"> Bienvenido, crea una cuenta para una mejor experiencia.</i></h2>
+          {% endif %}
+            <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
               <a href="{% url 'sobre_nosotros:sobre_nosotros' %}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>¿Quienes somos?</span>

@@ -56,7 +56,7 @@
           <li><a class="nav-link scrollto" href="{% url 'galeria:galeria' %}">Galeria</a></li>
           <li><a class="nav-link scrollto" href="{% url 'equipo:equipo' %}">Equipo</a></li>
           <li><a href="{% url 'eventos:eventos' %}">Eventos</a></li>
-          <li><a href="{% url 'noticias:noticias' %}">Blog de Noticias</a></li>
+          <li><a href="{% url 'noticias:noticias' %}">Noticias</a></li>
 
           {% if user.is_authenticated %}
             <li><a class="nav-link scrollto" href="{% url 'logout' %}">Cerrar sesión</a></li>

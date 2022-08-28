@@ -6,3 +6,5 @@ admin.site.register(Categoria)
 admin.site.register(Autor)
 admin.site.register(Post)
 admin.site.register(Web)
+admin.site.register(Comentarios)
+

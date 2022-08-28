@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.views.generic import ListView , DetailView
+from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
-from .models import  Post , Categoria , Web
-
+from .models import  Post , Categoria, Web , Comentarios
 
 
 def obtenerWeb():
         return Web.objects.filter(estado = True).latest('fecha_creacion')
 
 class Noticias(ListView):
-
     def get(self,request,*args,**kwargs):
         posts=Post.objects.filter(
                estado=True,
@@ -27,10 +27,13 @@ class Noticias(ListView):
                                 ).order_by('-fecha_publicacion')[:6]
         except:
             post_recientes = None
+        
+
+        
         contexto={
             'posts':posts,
             'post_recientes':post_recientes,
-            'web':obtenerWeb
+            'web':obtenerWeb,
 
         }
 
@@ -79,11 +82,13 @@ class Listado(ListView):
 
 class DetallePost(DetailView):
     def get(self,request,slug,*args,**kwargs):
+        
+        #form=SocialCommentForm()
+        
         try:
             post=Post.objects.get(slug=slug)
         except:
             post=None
-        
 
         try:
             post_recientes = Post.objects.filter(
@@ -93,10 +98,28 @@ class DetallePost(DetailView):
         except:
             post_recientes = None
 
+        
+        try:
+            publicacion = Comentarios.objects.all().filter(noticia=post)
+            contar_comentarios=Comentarios.objects.all().filter(noticia=post).count()
+        except:
+            publicacion= None
+
+        
         contexto={
+            'publicacion':publicacion,
             'post':post,
             'post_recientes':post_recientes,
-            'web':obtenerWeb
+            'web':obtenerWeb,
+            'contar_comentarios':contar_comentarios
+            
         }
         return render(request,'noticias/post.html',contexto)
+
+def Agregar_Comentario(request,slug):
+        texto_c = request.POST.get('coment')
+        noti = Post.objects.get(slug=slug)
+        c = Comentarios.objects.create(noticia = noti, texto = texto_c, usuario = request.user)
+        print(noti)
+        return HttpResponseRedirect(reverse_lazy('noticias:detalle_post',kwargs={'slug':slug}))
 

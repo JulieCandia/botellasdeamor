@@ -34,6 +34,7 @@
                 <ul>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{post.autor}}</a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i> {{post.fecha_publicacion}}</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-tags"></i> {{post.categoria}}</li>
                 </ul>
               </div>
 
@@ -76,9 +77,9 @@
             <h3 class="sidebar-title">Categorias</h3>
             <div class="sidebar-item categories">
               <ul>
-                <li><a href="{% url 'noticias:general' %}">General <span>(25)</span></a></li>
-                <li><a href="{% url 'noticias:educacion' %}">Educacion <span>(12)</span></a></li>
-                <li><a href="{% url 'noticias:informativo' %}">Informativo <span>(5)</span></a></li>
+                <li><a href="{% url 'noticias:general' %}">General</a></li>
+                <li><a href="{% url 'noticias:educacion' %}">Educacion </a></li>
+                <li><a href="{% url 'noticias:informativo' %}">Informativo </a></li>
               </ul>
             </div><!-- End sidebar categories-->
 

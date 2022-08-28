@@ -34,8 +34,9 @@
 
                     <div class="entry-meta">
                     <ul>
-                        <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{ post.categoria }}</li>
+                        <li class="d-flex align-items-center"><i class="bi bi-person"></i>{{ post.autor }}</li>
                         <li class="d-flex align-items-center"><i class="bi bi-clock"></i> {{post.fecha_publicacion}}</li>
+                        <li class="d-flex align-items-center"><i class="bi bi-tags"></i> {{post.categoria}}</li>
                     </ul>
                     </div>
 
@@ -74,16 +75,16 @@
 
                 <div class="sidebar">
       
-                  <h3 class="sidebar-title">Categories</h3>
+                  <h3 class="sidebar-title">Categorias</h3>
                   <div class="sidebar-item categories">
                     <ul>
-                      <li><a href="{% url 'noticias:general' %}">General <span>(25)</span></a></li>
-                      <li><a href="{% url 'noticias:educacion' %}">Educacion <span>(12)</span></a></li>
-                      <li><a href="{% url 'noticias:informativo' %}">Informativo <span>(5)</span></a></li>
+                      <li><a href="{% url 'noticias:general' %}">General </a></li>
+                      <li><a href="{% url 'noticias:educacion' %}">Educacion </a></li>
+                      <li><a href="{% url 'noticias:informativo' %}">Informativo </a></li>
                     </ul>
                   </div><!-- End sidebar categories-->
       
-                  <h3 class="sidebar-title">Recent Posts</h3>
+                  <h3 class="sidebar-title">Posts Mas Recientes</h3>
                   {% for post in post_recientes %}
                     <div class="sidebar-item recent-posts">
                       <div class="post-item clearfix">

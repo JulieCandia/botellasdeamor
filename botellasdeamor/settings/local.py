@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-j%(l#uu#_e8q6fr(9vhwkcbo$f-+6r=aeflqb#4ucyt1psc9oq
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['manugg.pythonanywhere.com']
 
 
 DATABASES = {

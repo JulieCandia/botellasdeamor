@@ -50,6 +50,10 @@
           <li><a class="nav-link scrollto" href="{% url 'equipo:equipo' %}">Equipo</a></li>
           <li><a class="nav-link scrollto" href="{% url 'eventos:eventos' %}">Eventos</a></li>
           <li><a class="nav-link scrollto" href="{% url 'noticias:noticias' %}">Noticias</a></li>
+          
+          {% if user.is_staff %}
+            <li><a class="nav-link scrollto" href="admin">Admin</a></li>
+          {% endif %}
 
           {% if user.is_authenticated %}
             <li><a class="nav-link scrollto" href="{% url 'logout' %}">Cerrar sesión</a></li>
@@ -58,9 +62,6 @@
             <li><a class="nav-link scrollto" href="{% url 'usuarios:registro' %}">Registrarse</a></li>
           {% endif %}
 
-          {% if user.is_staff %}
-            <li><a class="nav-link scrollto" href="{% url 'admin' %}">Cerrar sesión</a></li>
-          {% endif %}
 
 
 

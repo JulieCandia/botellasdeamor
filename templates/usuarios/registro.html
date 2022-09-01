@@ -10,7 +10,8 @@
         <div class="card border-0 shadow rounded-3 my-5">
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-bold fs-5">Registrate</h5>
-            <form action="" method="post">{% csrf_token %}         
+            <form action="" method="post">{% csrf_token %}
+              {{form.errors}}         
               <div class="form-floating mb-3">
                 <input class="form-control" type="text" name="first_name" required id="id_first_name">
                 <label for="id_first_name">Nombre:</label>
